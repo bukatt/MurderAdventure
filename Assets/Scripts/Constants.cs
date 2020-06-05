@@ -39,4 +39,21 @@ namespace Constants
         public static readonly string murderer = "Murderer";
         public static readonly string innocent = "Innocent";
     }
+
+    public static class PlayerWeaponSprites
+    {
+
+    }
+
+    public static class UIWeaponSprites
+    {
+        public static readonly string pistol = "Pistol";
+        public static readonly Sprite pistolSprite;
+
+        public static readonly Dictionary<string, Sprite> uiWeaponsDict = new Dictionary<string, Sprite>()
+        {
+            {pistol, pistolSprite }
+        };
+    }
+        
 }

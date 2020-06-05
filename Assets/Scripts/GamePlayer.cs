@@ -15,6 +15,10 @@ public class GamePlayer : NetworkBehaviour
 
     public PlayerControllerCustom playerController;
 
+    public GameObject envPS;
+
+    public GameObject flashLight;
+
     private GameManager gameManager;
     private NetworkManagerCustom room;
     private NetworkManagerCustom Room
@@ -30,6 +34,9 @@ public class GamePlayer : NetworkBehaviour
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         gameManager.GameStateChanged += OnGameStateChanged;
+
+        GameObject go = Instantiate(envPS, flashLight.transform.position, flashLight.transform.rotation);
+        go.GetComponent<PlayerFollow>().toFollow = flashLight.transform;
     }
 
     public override void OnStartServer()
