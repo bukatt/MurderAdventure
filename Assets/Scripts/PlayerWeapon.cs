@@ -3,27 +3,54 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 using System;
+using UnityEngine.Experimental.Rendering.Universal;
 
 
 public class PlayerWeapon : NetworkBehaviour
 {
-    //[SyncVar(hook = nameof(OnChangeWeapon))]
-    public WeaponObject equippedWeapon;
-    public List<WeaponObject> weapons = new List<WeaponObject>();
+    [SyncVar(hook = nameof(OnChangeWeapon))]
+    public string equippedWeapon;
+   // [SyncVar]
+    private List<string> weapons = new List<string>();
     public SpriteRenderer weaponSprite;
     public event Action<WeaponObject> WeaponChanged;
-    private void Start()
+  
+    [SerializeField]
+    private MuzzleFlash muzzleFlash;
+
+    [SerializeField]
+    private ParticleSystem gunSmoke;
+  //  [SerializeField]
+    
+
+    public override void OnStartClient()
     {
-        if (weapons.Count > 0)
-        {
-            equippedWeapon = weapons[0];
-        }
-        weaponSprite.sprite = equippedWeapon.inGameSprite;
+        base.OnStartClient();
+        Debug.Log("starting client");
+        SetUp();
+
+    }
+
+    public override void OnStartServer()
+    {
+        base.OnStartServer();
+        equippedWeapon = Constants.WeaponObjects.pistol;
+    }
+
+    public void SetUp()
+    {
+        weapons.Add(Constants.WeaponObjects.pistol);
+        weapons.Add(Constants.WeaponObjects.knife);
+        //if (weapons.Count > 0)
+        //{
+        //    CmdChangeWeapon(0);
+        //}
     }
 
     [ClientCallback]
     private void Update()
     {
+        if (!hasAuthority) { return; }
         if (Input.GetKeyDown("1"))
         {
             CmdChangeWeapon(0);
@@ -36,21 +63,44 @@ public class PlayerWeapon : NetworkBehaviour
     [Command]
     public void CmdChangeWeapon(int weaponIndex)
     {
+        
         if (weapons.Count > weaponIndex)
         {
-            RpcChangeWeapon(weaponIndex);
+            equippedWeapon = weapons[weaponIndex];
+            //RpcChangeWeapon(weaponIndex);
         }
     }
 
     [ClientRpc]
-    public void RpcChangeWeapon(int weaponIndex)
+    public void RpcAttack()
     {
-        equippedWeapon = weapons[weaponIndex];
-        weaponSprite.sprite = equippedWeapon.inGameSprite;
-        if (isLocalPlayer)
+        Debug.Log(Constants.WeaponObjects.uiWeaponsDict[equippedWeapon].muzzleFlash);
+        if (Constants.WeaponObjects.uiWeaponsDict[equippedWeapon].muzzleFlash)
         {
-            WeaponChanged?.Invoke(equippedWeapon);
+            muzzleFlash.ActivateLight();
+            gunSmoke.Play();
+
         }
-       // weaponSprite.sprite = newEquipped.inGameSprite;
+    }
+
+
+    //[ClientRpc]
+    //public void RpcChangeWeapon(int weaponIndex)
+    //{
+    //    equippedWeapon = weapons[weaponIndex];
+    //    weaponSprite.sprite = equippedWeapon.inGameSprite;
+    //    if (isLocalPlayer)
+    //    {
+    //        WeaponChanged?.Invoke(equippedWeapon);
+    //    }
+    //   // weaponSprite.sprite = newEquipped.inGameSprite;
+    //}
+
+    public void OnChangeWeapon(string oldWeapon, string newWeapon)
+    {
+        equippedWeapon = newWeapon;
+        WeaponObject weaponObj = Constants.WeaponObjects.uiWeaponsDict[newWeapon];
+        WeaponChanged?.Invoke(weaponObj);
+        //weaponSprite.sprite = weaponObj.inGameSprite;
     }
 }

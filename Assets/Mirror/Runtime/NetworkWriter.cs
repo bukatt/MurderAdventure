@@ -6,6 +6,18 @@ using UnityEngine;
 namespace Mirror
 {
     /// <summary>
+    /// a class that holds writers for the different types
+    /// Note that c# creates a different static variable for each
+    /// type
+    /// This will be populated by the weaver
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public static class Writer<T>
+    {
+        public static Action<NetworkWriter, T> write;
+    }
+
+    /// <summary>
     /// Binary stream Writer. Supports simple types, buffers, arrays, structs, and nested types
     /// <para>Use <see cref="NetworkWriterPool.GetWriter">NetworkWriter.GetWriter</see> to reduce memory allocation</para>
     /// </summary>
@@ -154,6 +166,16 @@ namespace Mirror
         }
 
         public void WriteInt64(long value) => WriteUInt64((ulong)value);
+
+        /// <summary>
+        /// Writes any type that mirror supports
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="value"></param>
+        public void Write<T>(T value)
+        {
+            Writer<T>.write(this, value);
+        }
     }
 
 
@@ -161,6 +183,8 @@ namespace Mirror
     // but they do all need to be extensions.
     public static class NetworkWriterExtensions
     {
+        static readonly ILogger logger = LogFactory.GetLogger(typeof(NetworkWriterExtensions));
+
         // cache encoding instead of creating it with BinaryWriter each time
         // 1000 readers before:  1MB GC, 30ms
         // 1000 readers after: 0.8MB GC, 18ms
@@ -493,7 +517,7 @@ namespace Mirror
 
         public static void WriteTransform(this NetworkWriter writer, Transform value)
         {
-            if (value == null || value.gameObject == null)
+            if (value == null)
             {
                 writer.WritePackedUInt32(0);
                 return;
@@ -505,7 +529,7 @@ namespace Mirror
             }
             else
             {
-                Debug.LogWarning("NetworkWriter " + value + " has no NetworkIdentity");
+                logger.LogWarning("NetworkWriter " + value + " has no NetworkIdentity");
                 writer.WritePackedUInt32(0);
             }
         }
@@ -524,7 +548,7 @@ namespace Mirror
             }
             else
             {
-                Debug.LogWarning("NetworkWriter " + value + " has no NetworkIdentity");
+                logger.LogWarning("NetworkWriter " + value + " has no NetworkIdentity");
                 writer.WritePackedUInt32(0);
             }
         }
@@ -532,11 +556,6 @@ namespace Mirror
         public static void WriteUri(this NetworkWriter writer, Uri uri)
         {
             writer.WriteString(uri.ToString());
-        }
-
-        public static void WriteMessage<T>(this NetworkWriter writer, T msg) where T : IMessageBase
-        {
-            msg.Serialize(writer);
         }
     }
 }

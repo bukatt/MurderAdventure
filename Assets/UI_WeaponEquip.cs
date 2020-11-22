@@ -6,17 +6,22 @@ using UnityEngine.UI;
 using Mirror;
 public class UI_WeaponEquip : MonoBehaviour
 {
-    private Image myImage;
+    public Image myImage;
     private NetworkIdentity playerId;
     private Sprite mySprite;
 
     private void Awake()
     {
-        myImage = GetComponent<Image>();
+        
         LocalPlayerAnnouncement.OnLocalPlayerUpdated += UpdatePlayer;
         
         // UpdatePlayer()
         //playerId = base.connectionToClient.identity;
+    }
+
+    private void Start()
+    {
+        myImage = GetComponent<Image>();
     }
 
     private void UpdatePlayer(NetworkIdentity playerId)
@@ -28,28 +33,36 @@ public class UI_WeaponEquip : MonoBehaviour
             if (pw)
             {
                 pw.WeaponChanged += UpdateWeapon;
-                WeaponObject weapon = pw.equippedWeapon;
-                UpdateWeapon(weapon);
+                UpdateWeapon(Constants.WeaponObjects.pistolObject);
+                //if (pw.equippedWeapon != null)
+                //{
+                //    Debug.Log(pw.equippedWeapon);
+                //    UpdateWeapon(Constants.WeaponObjects.uiWeaponsDict[pw.equippedWeapon]);
+                //}
+                //WeaponObject weapon = pw.equippedWeapon;
+                //UpdateWeapon(weapon);
             }
         }
 
     }
 
-    private void OnDestroy()
-    {
-        try
-        {
-            playerId.gameObject.GetComponent<PlayerWeapon>().WeaponChanged -= UpdateWeapon;
-            LocalPlayerAnnouncement.OnLocalPlayerUpdated += UpdatePlayer;
-        } catch
-        {
+    private void OnDestroy() { 
 
-        }
+
+        playerId.gameObject.GetComponent<PlayerWeapon>().WeaponChanged -= UpdateWeapon;
+        //try
+        //{
+        //    playerId.gameObject.GetComponent<PlayerWeapon>().WeaponChanged -= UpdateWeapon;
+        //    LocalPlayerAnnouncement.OnLocalPlayerUpdated += UpdatePlayer;
+        //} catch
+        //{
+
+        //}
     }
 
     private void UpdateWeapon(WeaponObject newWeapon)
     {
-        Debug.Log("updating weapon");
+        Debug.Log("updating weapon" + newWeapon.name);
         myImage.sprite = newWeapon.uiSprite;
     }
 }

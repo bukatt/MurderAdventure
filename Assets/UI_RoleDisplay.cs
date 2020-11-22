@@ -6,32 +6,53 @@ using TMPro;
 public class UI_RoleDisplay : MonoBehaviour
 {
     private TMP_Text myText;
-    private NetworkIdentity playerId;
-    private void Awake()
+
+    public GamePlayer gamePlayer;
+
+    public void Start()
     {
         myText = GetComponent<TMP_Text>();
-        LocalPlayerAnnouncement.OnLocalPlayerUpdated += UpdatePlayer;
-       // UpdatePlayer()
-        //playerId = base.connectionToClient.identity;
+        gamePlayer.RoleChanged += OnRoleChange;
+        OnRoleChange(gamePlayer.role);
+       // myText = GetComponent<TMP_Text>();
     }
 
-    private void UpdatePlayer (NetworkIdentity playerId)
+    public void OnRoleChange(string role)
     {
-        Debug.Log("updating player");
-        this.playerId = playerId;
-        try {
-            string role = playerId.gameObject.GetComponent<GamePlayer>().role;
-            OnRoleUpdate(role);
-        } catch
-        {
-
-        }
-        
+        myText.text = role;
     }
+    //private NetworkIdentity playerId;
+    //private void Start()
+    //{
+    //    myText = GetComponent<TMP_Text>();
+    //    LocalPlayerAnnouncement.OnLocalPlayerUpdated += UpdatePlayer;
+    //   // UpdatePlayer()
+    //    //playerId = base.connectionToClient.identity;
+    //}
 
-    private void OnRoleUpdate(string newRole)
-    {
-        Debug.Log("updating player3");
-        myText.text = newRole;
-    }
+    //private void UpdatePlayer (NetworkIdentity playerId)
+    //{
+    //    Debug.Log("updating player");
+    //    this.playerId = playerId;
+    //    try {
+    //        string role = playerId.gameObject.GetComponent<GamePlayer>().role;
+    //        playerId.gameObject.GetComponent<GamePlayer>().RoleChanged += OnRoleUpdate;
+    //        OnRoleUpdate(role);
+    //    } catch
+    //    {
+
+    //    }
+
+    //}
+
+    //private void OnRoleUpdate(string newRole)
+    //{
+    //    Debug.Log("updating player3");
+    //    myText.text = newRole;
+    //}
+
+    //private void OnDestroy()
+    //{
+    //    playerId.gameObject.GetComponent<GamePlayer>().RoleChanged -= OnRoleUpdate;
+    //}
 }

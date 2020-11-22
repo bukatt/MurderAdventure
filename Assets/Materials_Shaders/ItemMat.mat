@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ItemMat
+  m_Shader: {fileID: -6465566751694194690, guid: 35be8dd2717a7be46954f1dad45150a2,
+    type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 1
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - NormalTexture:
+        m_Texture: {fileID: 2800000, guid: 37326791fdeba0c4eaf41e98a5ee7e4e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 0a111f0de51c42942b21775801e559cd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Boolean_8B6347EA: 0
+    - Vector1_58BB6461: 0.1
+    - Vector1_AC9CBB25: 1
+    - _Highlight: 0
+    m_Colors:
+    - Color_2546EB29: {r: 0.20942406, g: 3.9999995, b: 0, a: 0}
+  m_BuildTextureStacks: []

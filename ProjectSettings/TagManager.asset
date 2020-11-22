@@ -6,6 +6,17 @@ TagManager:
   tags:
   - VirtualCamera
   - GameManager
+  - InspectorUI
+  - ClueUI
+  - NotClueUI
+  - NameEnterButton
+  - NameEnterField
+  - UIManager
+  - LobbyUIManager
+  - GameUIManager
+  - ItemContainer
+  - ChatUIManager
+  - ChatManager
   layers:
   - Default
   - TransparentFX
@@ -15,12 +26,12 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - BulletImpactParticles
+  - Player
+  - Objects
+  - Mask
+  - Door
+  - Wall
   - 
   - 
   - 
@@ -46,6 +57,36 @@ TagManager:
   - name: Map
     uniqueID: 429968587
     locked: 0
+  - name: HiddenItems
+    uniqueID: 186338469
+    locked: 0
+  - name: EnvParticles
+    uniqueID: 2320899203
+    locked: 0
+  - name: Pipe
+    uniqueID: 4074815529
+    locked: 0
   - name: Character
     uniqueID: 2569880467
+    locked: 0
+  - name: EnvironmentObjects
+    uniqueID: 1271166915
+    locked: 0
+  - name: PlayerObjects
+    uniqueID: 2326613751
+    locked: 0
+  - name: Effects
+    uniqueID: 2318052129
+    locked: 0
+  - name: Speech
+    uniqueID: 690400509
+    locked: 0
+  - name: Wall
+    uniqueID: 906555013
+    locked: 0
+  - name: Door
+    uniqueID: 2598796317
+    locked: 0
+  - name: UI
+    uniqueID: 285739073
     locked: 0
