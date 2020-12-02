@@ -1,0 +1,664 @@
+fileFormatVersion: 2
+guid: 31c92b62bbe2fe5499075595a0f84567
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5785857229047980075
+    second: Terrain Tiles_0
+  - first:
+      213: -7763788838878859299
+    second: Terrain Tiles_1
+  - first:
+      213: -1542363707909670340
+    second: Terrain Tiles_2
+  - first:
+      213: 6848397472626031763
+    second: Terrain Tiles_3
+  - first:
+      213: -4270926438765606345
+    second: Terrain Tiles_4
+  - first:
+      213: 3564478100762328349
+    second: Terrain Tiles_5
+  - first:
+      213: -7817710475926471563
+    second: Terrain Tiles_6
+  - first:
+      213: 7694224154592454805
+    second: Terrain Tiles_7
+  - first:
+      213: 687796262806188120
+    second: Terrain Tiles_8
+  - first:
+      213: -8344211308085055768
+    second: Terrain Tiles_9
+  - first:
+      213: -3826141196605005072
+    second: Terrain Tiles_10
+  - first:
+      213: -4752417237119838347
+    second: Terrain Tiles_11
+  - first:
+      213: -7028402426150747257
+    second: Terrain Tiles_12
+  - first:
+      213: 3914795147732109213
+    second: Terrain Tiles_13
+  - first:
+      213: -161241406203639678
+    second: Terrain Tiles_14
+  - first:
+      213: -3563290186606231410
+    second: Terrain Tiles_15
+  - first:
+      213: 5955987223351917648
+    second: Terrain Tiles_16
+  - first:
+      213: 380860765467391201
+    second: Terrain Tiles_17
+  - first:
+      213: -688526526444588881
+    second: Terrain Tiles_18
+  - first:
+      213: 2468776971712864973
+    second: Terrain Tiles_19
+  - first:
+      213: 4455409940942914077
+    second: Terrain Tiles_20
+  - first:
+      213: 8273985466967851191
+    second: Terrain Tiles_21
+  - first:
+      213: -4632161673494020196
+    second: Terrain Tiles_22
+  - first:
+      213: -3239191698915204419
+    second: Terrain Tiles_23
+  - first:
+      213: -4351507062549637764
+    second: Terrain Tiles_24
+  - first:
+      213: 8948212607805278093
+    second: Terrain Tiles_25
+  - first:
+      213: 326219778430467387
+    second: Terrain Tiles_26
+  - first:
+      213: 2963477826305501094
+    second: Terrain Tiles_27
+  - first:
+      213: 2266623904036599512
+    second: Terrain Tiles_28
+  - first:
+      213: -934321107680181098
+    second: Terrain Tiles_29
+  - first:
+      213: 2727086746458607360
+    second: Terrain Tiles_30
+  - first:
+      213: 7593970079853464551
+    second: Terrain Tiles_31
+  - first:
+      213: 6647130078773998581
+    second: Terrain Tiles_32
+  - first:
+      213: 1071181002608582349
+    second: Terrain Tiles_33
+  - first:
+      213: 8186613664259694039
+    second: Terrain Tiles_34
+  - first:
+      213: 5717568630483393598
+    second: Terrain Tiles_35
+  - first:
+      213: -6864251325853166434
+    second: Terrain Tiles_36
+  - first:
+      213: -8306272362440450540
+    second: Terrain Tiles_37
+  - first:
+      213: -7085714998729334768
+    second: Terrain Tiles_38
+  - first:
+      213: 4755898368792442716
+    second: Terrain Tiles_39
+  - first:
+      213: -5666534839874161957
+    second: Terrain Tiles_40
+  - first:
+      213: 7066788938700431373
+    second: Terrain Tiles_41
+  - first:
+      213: 2790300590869617186
+    second: Terrain Tiles_42
+  - first:
+      213: 5213519299418123736
+    second: Terrain Tiles_43
+  - first:
+      213: -3628609988068711323
+    second: Terrain Tiles_44
+  - first:
+      213: -7665092867279092628
+    second: Terrain Tiles_45
+  - first:
+      213: -2763850885940069417
+    second: Terrain Tiles_46
+  - first:
+      213: 6585710650932291223
+    second: Terrain Tiles_47
+  - first:
+      213: -5738156664562243174
+    second: Terrain Tiles_48
+  - first:
+      213: -8263748776467646421
+    second: Terrain Tiles_49
+  - first:
+      213: 8771196809901657364
+    second: Terrain Tiles_50
+  - first:
+      213: 6935777124998733325
+    second: Terrain Tiles_51
+  - first:
+      213: -3482198044445069958
+    second: Terrain Tiles_52
+  - first:
+      213: -1644619935815786011
+    second: Terrain Tiles_53
+  - first:
+      213: -7606310907208189701
+    second: Terrain Tiles_54
+  - first:
+      213: 1877164653832127038
+    second: Terrain Tiles_55
+  - first:
+      213: 696194901602593790
+    second: Terrain Tiles_56
+  - first:
+      213: -3689369026273707154
+    second: Terrain Tiles_57
+  - first:
+      213: 3016280345923057169
+    second: Terrain Tiles_58
+  - first:
+      213: -3760878903836511667
+    second: Terrain Tiles_59
+  - first:
+      213: -6295431887592978805
+    second: Terrain Tiles_60
+  - first:
+      213: -6713816544328668290
+    second: Terrain Tiles_61
+  - first:
+      213: 5086895057297417013
+    second: Terrain Tiles_62
+  - first:
+      213: 1765716268752589062
+    second: Terrain Tiles_63
+  - first:
+      213: -817357358670537129
+    second: Terrain Tiles_64
+  - first:
+      213: 1674667244527735399
+    second: Terrain Tiles_65
+  - first:
+      213: 1570040014919657102
+    second: Terrain Tiles_66
+  - first:
+      213: -2320973986155305645
+    second: Terrain Tiles_67
+  - first:
+      213: 3608262686993926965
+    second: Terrain Tiles_68
+  - first:
+      213: 8152272191226676100
+    second: Terrain Tiles_69
+  - first:
+      213: 8342181985151212894
+    second: Terrain Tiles_70
+  - first:
+      213: -4971189469678732971
+    second: Terrain Tiles_71
+  - first:
+      213: 2764575878055987559
+    second: Terrain Tiles_72
+  - first:
+      213: 4837741998585748285
+    second: Terrain Tiles_73
+  - first:
+      213: 6989547665073437261
+    second: Terrain Tiles_74
+  - first:
+      213: -7387731280583045769
+    second: Terrain Tiles_75
+  - first:
+      213: -7891516826615471874
+    second: Terrain Tiles_76
+  - first:
+      213: 8619899464900882250
+    second: Terrain Tiles_77
+  - first:
+      213: -5108559464975808871
+    second: Terrain Tiles_78
+  - first:
+      213: -8400481133982512979
+    second: Terrain Tiles_79
+  - first:
+      213: -3695194079517018878
+    second: Terrain Tiles_80
+  - first:
+      213: -2386232538718829344
+    second: Terrain Tiles_81
+  - first:
+      213: -3532504390116960306
+    second: Terrain Tiles_82
+  - first:
+      213: -3554912515945725640
+    second: Terrain Tiles_83
+  - first:
+      213: -3139475365838805004
+    second: Terrain Tiles_84
+  - first:
+      213: 536420658243986287
+    second: Terrain Tiles_85
+  - first:
+      213: 6162477979074600643
+    second: Terrain Tiles_86
+  - first:
+      213: -3423825152542799508
+    second: Terrain Tiles_87
+  - first:
+      213: -4696590428262653304
+    second: Terrain Tiles_88
+  - first:
+      213: -5440003538406661528
+    second: Terrain Tiles_89
+  - first:
+      213: 3324712919103164471
+    second: Terrain Tiles_90
+  - first:
+      213: -1527037369050071750
+    second: Terrain Tiles_91
+  - first:
+      213: -3976770109788675099
+    second: Terrain Tiles_92
+  - first:
+      213: 5675359287859301850
+    second: Terrain Tiles_93
+  - first:
+      213: -4484787996463188738
+    second: Terrain Tiles_94
+  - first:
+      213: -4475020459976384280
+    second: Terrain Tiles_95
+  - first:
+      213: -1823575621156421835
+    second: Terrain Tiles_96
+  - first:
+      213: -5638202617255428047
+    second: Terrain Tiles_97
+  - first:
+      213: -1174547036934663997
+    second: Terrain Tiles_98
+  - first:
+      213: 601853963007144304
+    second: Terrain Tiles_99
+  - first:
+      213: -509541409360110405
+    second: Terrain Tiles_100
+  - first:
+      213: -6818255365842530455
+    second: Terrain Tiles_101
+  - first:
+      213: -4878123752386730743
+    second: Terrain Tiles_102
+  - first:
+      213: -5742172517865117528
+    second: Terrain Tiles_103
+  - first:
+      213: -4692381033560370641
+    second: Terrain Tiles_104
+  - first:
+      213: -5022115264034448743
+    second: Terrain Tiles_105
+  - first:
+      213: -4183222322790711091
+    second: Terrain Tiles_106
+  - first:
+      213: -8244307145327234262
+    second: Terrain Tiles_107
+  - first:
+      213: -5760708797982080484
+    second: Terrain Tiles_108
+  - first:
+      213: 5459326565690900032
+    second: Terrain Tiles_109
+  - first:
+      213: 1473349296547710582
+    second: Terrain Tiles_110
+  - first:
+      213: -4396566115514646048
+    second: Terrain Tiles_111
+  - first:
+      213: -250121800841997486
+    second: Terrain Tiles_112
+  - first:
+      213: 7954034516145078634
+    second: Terrain Tiles_113
+  - first:
+      213: -2069495190364402947
+    second: Terrain Tiles_114
+  - first:
+      213: 2180274195057465883
+    second: Terrain Tiles_115
+  - first:
+      213: 5227988874776941270
+    second: Terrain Tiles_116
+  - first:
+      213: -1653613098245927301
+    second: Terrain Tiles_117
+  - first:
+      213: 2942835040925640790
+    second: Terrain Tiles_118
+  - first:
+      213: 5582269718088484353
+    second: Terrain Tiles_119
+  - first:
+      213: -654346824644758004
+    second: Terrain Tiles_120
+  - first:
+      213: 2147444691257468926
+    second: Terrain Tiles_121
+  - first:
+      213: 5542047026936012148
+    second: Terrain Tiles_122
+  - first:
+      213: 1508320755198871919
+    second: Terrain Tiles_123
+  - first:
+      213: -5432081295954877495
+    second: Terrain Tiles_124
+  - first:
+      213: -1900161461027703680
+    second: Terrain Tiles_125
+  - first:
+      213: 2761574630548466959
+    second: Terrain Tiles_126
+  - first:
+      213: -3046026166364740115
+    second: Terrain Tiles_127
+  - first:
+      213: 2161969116368000267
+    second: Terrain Tiles_128
+  - first:
+      213: -7099455033486820364
+    second: Terrain Tiles_129
+  - first:
+      213: 452893721371346316
+    second: Terrain Tiles_130
+  - first:
+      213: 4322464031055663069
+    second: Terrain Tiles_131
+  - first:
+      213: -6329280413996962173
+    second: Terrain Tiles_132
+  - first:
+      213: -6982788474702799781
+    second: Terrain Tiles_133
+  - first:
+      213: -3739079158849802127
+    second: Terrain Tiles_134
+  - first:
+      213: 1153108384915087027
+    second: Terrain Tiles_135
+  - first:
+      213: -9047553990362495964
+    second: Terrain Tiles_136
+  - first:
+      213: 2198393429582799750
+    second: Terrain Tiles_137
+  - first:
+      213: -6821787338985685536
+    second: Terrain Tiles_138
+  - first:
+      213: -1158200478759824183
+    second: Terrain Tiles_139
+  - first:
+      213: 2938834183329312314
+    second: Terrain Tiles_140
+  - first:
+      213: -3044723438937702230
+    second: Terrain Tiles_141
+  - first:
+      213: 5248442588833090974
+    second: Terrain Tiles_142
+  - first:
+      213: -3701069545725336902
+    second: Terrain Tiles_143
+  - first:
+      213: 3446365235842225212
+    second: Terrain Tiles_144
+  - first:
+      213: 5016836495605976404
+    second: Terrain Tiles_145
+  - first:
+      213: -7819688707290610368
+    second: Terrain Tiles_146
+  - first:
+      213: -1151021579886958262
+    second: Terrain Tiles_147
+  - first:
+      213: -1573287952386669122
+    second: Terrain Tiles_148
+  - first:
+      213: -8478069743100253477
+    second: Terrain Tiles_149
+  - first:
+      213: 979742745073227405
+    second: Terrain Tiles_150
+  - first:
+      213: 7074701721880687660
+    second: Terrain Tiles_151
+  - first:
+      213: 4753157753055325047
+    second: Terrain Tiles_152
+  - first:
+      213: 10983227873756865
+    second: Terrain Tiles_153
+  - first:
+      213: 599032178907528739
+    second: Terrain Tiles_154
+  - first:
+      213: -1147871069306408262
+    second: Terrain Tiles_155
+  - first:
+      213: 7512656161735893737
+    second: Terrain Tiles_156
+  - first:
+      213: -7015025327871690585
+    second: Terrain Tiles_157
+  - first:
+      213: -6258093881964543264
+    second: Terrain Tiles_158
+  - first:
+      213: -6999637156837758732
+    second: Terrain Tiles_159
+  - first:
+      213: -1568148624414003266
+    second: Terrain Tiles_160
+  - first:
+      213: 3587591917352906718
+    second: Terrain Tiles_161
+  - first:
+      213: -2125044058964645614
+    second: Terrain Tiles_162
+  - first:
+      213: 7614561271052725195
+    second: Terrain Tiles_163
+  - first:
+      213: -8034549031402931293
+    second: Terrain Tiles_164
+  - first:
+      213: 7117315276621954236
+    second: Terrain Tiles_165
+  - first:
+      213: 7054422262594964471
+    second: Terrain Tiles_166
+  - first:
+      213: -5913526437007312040
+    second: Terrain Tiles_167
+  - first:
+      213: -8338248885052075503
+    second: Terrain Tiles_168
+  - first:
+      213: 5278351687393632038
+    second: Terrain Tiles_169
+  - first:
+      213: -5580293933650433573
+    second: Terrain Tiles_170
+  - first:
+      213: -3639950934273916490
+    second: Terrain Tiles_171
+  - first:
+      213: -1109394449896936688
+    second: Terrain Tiles_172
+  - first:
+      213: -850899511525127379
+    second: Terrain Tiles_173
+  - first:
+      213: -8653648063698611690
+    second: Terrain Tiles_174
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
