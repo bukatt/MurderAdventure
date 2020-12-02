@@ -27,16 +27,26 @@ public class ClueCardManagerUI : NetworkBehaviour
     [SerializeField]
     private TMP_Text itemName;
 
-    private int increment = 0;
+    [SerializeField]
+    private Button actionButton;
+
+    public int increment = 0;
+
+    public static event Action<ClueCardManagerUI> ItemPickedUp;
 
     private void OnEnable()
     {
         Debug.Log("enabling clue ui");
         if (itemContainer.itemObjects.Count > 0)
         {
-            increment = 0;
-            currentItem = Constants.Items.itemDict[itemContainer.itemObjects[0]];
+            SetToStart();
         }
+    }
+
+    private void SetToStart()
+    {
+        increment = 0;
+        currentItem = Constants.Items.itemDict[itemContainer.itemObjects[0]];
     }
 
     public void UpdateDisplayedClueUI()
@@ -44,6 +54,15 @@ public class ClueCardManagerUI : NetworkBehaviour
         Debug.Log("Update display clue ui");
         itemImage.sprite = currentItem.uiSprite;
         itemName.text = currentItem.itemName;
+        Debug.Log(itemContainer.clueManager.currentClue + " " + currentItem.itemName);
+        if (itemContainer.clueManager.currentClue == currentItem.itemName)
+        {
+            Debug.Log("ACTION BUTTONENABLED");
+            actionButton.gameObject.SetActive(true);
+        } else
+        {
+            actionButton.gameObject.SetActive(false);
+        }
     }
 
     public void NextCard()
@@ -72,8 +91,20 @@ public class ClueCardManagerUI : NetworkBehaviour
     }
 
     [Command]
-    public void CmdRemoveItem()
+    public void CmdRemoveItem(int i)
     {
+            itemContainer.itemObjects.RemoveAt(i);
+            RpcReset();
+    }
 
+    [ClientRpc]
+    public void RpcReset()
+    {
+        SetToStart();
+    }
+
+    public void ActionButtonClicked()
+    {
+        ItemPickedUp?.Invoke(this);
     }
 }

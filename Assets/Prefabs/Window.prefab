@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2026323574125467808}
   - component: {fileID: 9156603485855362864}
   m_Layer: 13
-  m_Name: WallSegment
+  m_Name: Window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,7 +50,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 175afa7d88bea5d46b83bc3e38d6ea85, type: 2}
+  - {fileID: 2100000, guid: 7869683a53f3d3f4aa696ad98b6f970d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -21,13 +21,16 @@ public class PlayerControllerCustom : NetworkBehaviour
     private Rigidbody2D myRB;
 
     [SerializeField]
-    private float speed = 5f;
+    private float speed = .75f;
 
     [SerializeField]
     private float sensitivity = 3f;
 
     [SerializeField]
     private float lookSensitivity = 3f;
+
+    [SerializeField]
+    private float walkAnimSensitivity;
 
 
     #region Controls
@@ -84,10 +87,20 @@ public class PlayerControllerCustom : NetworkBehaviour
 
     public Transform rightHandTarget;
 
+    public Animator animator;
+
     private void OnDestroy()
     {
         playerDeath.playerKilled -= OnDeath;
         gameManager.GameStateChanged -= OnGameStateChanged;
+    }
+
+    private void Start()
+    {
+        if (!isLocalPlayer)
+        {
+            Destroy(myRB);
+        }
     }
 
     public override void OnStartClient()
@@ -136,11 +149,11 @@ public class PlayerControllerCustom : NetworkBehaviour
             attackCounter = Constants.WeaponObjects.uiWeaponsDict[playerWeapon.equippedWeapon].attackRate;
         }
 
-        if (Input.GetKeyDown(inspectButton))
-        {
-            InspectPressed?.Invoke(base.netIdentity);
-            clueManager.CmdCheckClue();
-        }
+        //if (Input.GetKeyDown(inspectButton))
+        //{
+        //    InspectPressed?.Invoke(base.netIdentity);
+        //    clueManager.CmdCheckClue();
+        //}
 
         if (Input.GetKeyDown(changeViewButton) && gamePlayer.role == Constants.Roles.murderer)
         {
@@ -151,17 +164,20 @@ public class PlayerControllerCustom : NetworkBehaviour
         {
             CmdToggleLantern();
         }
-       
+
         if (Input.GetKeyDown(toggleDoor))
         {
             CmdToggleDoor();
         }
-        //RaycastHit2D _hit;
-        //_hit = Physics2D.Raycast(transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position, 10, mask);
-        ////var points = new Vector3[2];
-        //lineOfSight.SetPosition(0,transform.position);
-        //lineOfSight.SetPosition(1, _hit.transform.position);
-        
+
+        float lookDirectionDifference = lookDirection - lookDirection_p;
+        lookDirectionDifference = Mathf.Abs(lookDirectionDifference);
+        Debug.Log(moveDirection - moveDirection_p);
+        //Debug.Log(lookDirection);
+        //if (moveDirection != moveDirection_p || lookDirectionDifference != 0)
+        //{
+        //    CmdMove(Mathf.Lerp(lookDirection_p, lookDirection, sensitivity), moveDirection);
+        //}
     }
 
     #region lantern
@@ -197,30 +213,48 @@ public class PlayerControllerCustom : NetworkBehaviour
     {
 
         if (!isLocalPlayer) { return; }
-
-        float lookDirectionDifference = lookDirection - lookDirection_p;
-        lookDirectionDifference = Mathf.Abs(lookDirectionDifference);
-        //Debug.Log(lookDirection);
-        if (moveDirection != moveDirection_p || lookDirectionDifference != 0)
+        myRB.velocity = new Vector2(moveDirection.x, moveDirection.y) * speed;
+        myRB.MoveRotation(lookDirection);
+        if (myRB.velocity.magnitude >= walkAnimSensitivity)
         {
-            CmdMove(Mathf.Lerp(lookDirection_p, lookDirection, sensitivity), moveDirection);
-            //if (lookDirectionDifference >= lookSensitivity)
-            //{
-            //    CmdMove(Mathf.Lerp(lookDirection_p, lookDirection, sensitivity), moveDirection);
-            //} else
-            //{
-            //    CmdMove(lookDirection_p, moveDirection);
-            //}
-            
-
-            //if (lookDirectionDifference > .1)
-            //{
-            //    CmdMove(lookDirection, moveDirection);
-            //} else
-            //{
-            //    CmdMove(lookDirection_p, moveDirection);
-            //}
+            animator.SetBool("walk", true);
+        } else
+        {
+            animator.SetBool("walk", false);
         }
+        //float lookDirectionDifference = lookDirection - lookDirection_p;
+        //lookDirectionDifference = Mathf.Abs(lookDirectionDifference);
+        //Debug.Log(moveDirection - moveDirection_p);
+        //if (moveDirection != moveDirection_p)
+        //{
+        //    animator.SetBool("walk", true);
+        //}
+        //else
+        //{
+        //    animator.SetBool("walk", false);
+        //}
+        ////Debug.Log(lookDirection);
+        //if (moveDirection != moveDirection_p || lookDirectionDifference != 0)
+        //{
+
+        //    CmdMove(Mathf.Lerp(lookDirection_p, lookDirection, sensitivity), moveDirection);
+        //    //if (lookDirectionDifference >= lookSensitivity)
+        //    //{
+        //    //    CmdMove(Mathf.Lerp(lookDirection_p, lookDirection, sensitivity), moveDirection);
+        //    //} else
+        //    //{
+        //    //    CmdMove(lookDirection_p, moveDirection);
+        //    //}
+
+
+        //    //if (lookDirectionDifference > .1)
+        //    //{
+        //    //    CmdMove(lookDirection, moveDirection);
+        //    //} else
+        //    //{
+        //    //    CmdMove(lookDirection_p, moveDirection);
+        //    //}
+        //}
     }
 
     [Command]
@@ -233,6 +267,7 @@ public class PlayerControllerCustom : NetworkBehaviour
         //myRB.MovePosition(myRB.position + moveDirection * speed * Time.deltaTime);
 
         RpcMove(lookDirection, moveDirection);
+        
     }
 
     [ClientRpc]

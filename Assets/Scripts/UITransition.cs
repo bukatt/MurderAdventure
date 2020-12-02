@@ -12,4 +12,10 @@ public class UITransition : MonoBehaviour
         from.SetActive(false);
         to.SetActive(true);
     }
+
+    public void TurnOff()
+    {
+        from.SetActive(false);
+        to.SetActive(false);
+    }
 }

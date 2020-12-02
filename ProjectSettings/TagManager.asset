@@ -81,11 +81,11 @@ TagManager:
   - name: Speech
     uniqueID: 690400509
     locked: 0
-  - name: Wall
-    uniqueID: 906555013
-    locked: 0
   - name: Door
     uniqueID: 2598796317
+    locked: 0
+  - name: Wall
+    uniqueID: 906555013
     locked: 0
   - name: UI
     uniqueID: 285739073

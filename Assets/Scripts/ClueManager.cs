@@ -43,8 +43,14 @@ public class ClueManager : NetworkBehaviour
 
     private void Awake()
     {
-        
+        ClueCardManagerUI.ItemPickedUp += OnItemPickedUp;  
         //gameObject.GetComponent<PlayerControllerCustom>().InspectPressed += InspectClue;
+    }
+
+    public void OnItemPickedUp(ClueCardManagerUI ccm)
+    {
+        ccm.CmdRemoveItem(ccm.increment);
+        IterateClue();
     }
 
     public override void OnStartServer()
@@ -104,21 +110,21 @@ public class ClueManager : NetworkBehaviour
         }
     }
 
-    [Command]
-    public void CmdCheckClue()
-    {
-        if(nearClue != null)
-        {
-            nearClue.TargetOpenUI(connectionToClient);
+    //[Command]
+    //public void CmdCheckClue()
+    //{
+    //    if(nearClue != null)
+    //    {
+    //        nearClue.TargetOpenUI(connectionToClient);
             
-        }
-    }
+    //    }
+    //}
 
-    [TargetRpc]
-    private void TargetOpenClueUI(NetworkConnection id)
-    {
-        nearClue.OpenUI();
-    }
+    //[TargetRpc]
+    //private void TargetOpenClueUI(NetworkConnection id)
+    //{
+    //    nearClue.OpenUI();
+    //}
 
     [Command]
     public void CmdUpdateClue(string newClue)
